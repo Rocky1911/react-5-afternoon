@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 class WizardEleven extends Component {
   render() {
+    console.log(this.props);
     return (
       <div className="parent-div">
         <div className="vert-align">
@@ -120,24 +121,5 @@ class WizardEleven extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    loanType,
-    propertyType,
-    city,
-    propToBeUsedOn,
-    found,
-    realEstateAgent,
-    cost,
-    downPayment,
-    credit,
-    history,
-    addressOne,
-    addressTwo,
-    addressThree,
-    firstName,
-    lastName,
-    email
-  };
-}
+const mapStateToProps = state => state;
 export default connect(mapStateToProps)(WizardEleven);
