@@ -35,7 +35,8 @@ const UPDATE_LAST_NAME = "UPDATE_LAST_NAME";
 const UPDATE_EMAIL = "UPDATE_EMAIL";
 
 function reducer(state = initialState, action) {
-  console.log("REDUCER HIT: Action ->", action);
+  console.log("REDUCER HIT: Action TYPE ->", action.type);
+  console.log("REDUCER HIT: Action PAYLOAD ->", action.payload);
 
   switch (action.type) {
     //try using es6 literals
@@ -203,7 +204,7 @@ export function updateLastName(lastName) {
 export function updateEmail(email) {
   return {
     type: UPDATE_EMAIL,
-    action: email
+    payload: email
   };
 }
 export default reducer;

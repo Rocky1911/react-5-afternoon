@@ -92,7 +92,7 @@ class WizardEleven extends Component {
             <div className="overarching-div">
               <div className="form">
                 Bankruptcy history:
-                <p className="p2">{this.props.history}</p>
+                {/* <p className="p2">{this.props.history}</p> */}
               </div>
             </div>
 

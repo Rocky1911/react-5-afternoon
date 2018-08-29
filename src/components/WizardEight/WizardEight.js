@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import updateHistory from "../../ducks/reducer";
+import { updateHistory } from "../../ducks/reducer";
 class WizardEight extends Component {
   render() {
     const { updateHistory } = this.props;

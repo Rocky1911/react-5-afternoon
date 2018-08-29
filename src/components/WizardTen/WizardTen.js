@@ -1,11 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import {
-  updateFirstName,
-  updateLastName,
-  updateEmail
-} from "../../ducks/reducer";
+import { updateFirstName, updateLastName } from "../../ducks/reducer";
+import { updateEmail } from "../../ducks/reducer";
 class WizardTen extends Component {
   render() {
     return (
@@ -15,17 +12,17 @@ class WizardTen extends Component {
           <input
             type="text"
             placeholder="First Name"
-            onChange={this.props.updateFirstName}
+            onChange={e => this.props.updateFirstName(e.target.value)}
           />
           <input
             type="text"
             placeholder="Last Name"
-            onChange={this.props.updateLastName}
+            onChange={e => this.props.updateLastName(e.target.value)}
           />
           <input
             type="text"
             placeholder="email"
-            onChange={this.props.updateEmail}
+            onChange={e => this.props.updateEmail(e.target.value)}
           />
           <Link to="/wEleven">
             <button className="margin-btn"> Next </button>
@@ -37,14 +34,14 @@ class WizardTen extends Component {
 }
 
 function mapStateToProps(state) {
-  const { fistName, lastName, email } = state;
+  const { firstName, lastName, email } = state;
   return {
-    fistName,
+    firstName,
     lastName,
     email
   };
 }
 export default connect(
   mapStateToProps,
-  { updateFirstName, updateFirstName, updateEmail }
+  { updateFirstName, updateLastName, updateEmail }
 )(WizardTen);
